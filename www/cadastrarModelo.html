@@ -81,7 +81,7 @@
           $.ajax({
              method: "POST",
              url: "http://cidopneus.esy.es/json/novoModelo/1",
-             data: {nome: nomeModelo,editar:1}
+             data: {nome: nomeModelo, editar:1, ativo:1}
            })
            .done(function(result) {
               if(result == "1"){

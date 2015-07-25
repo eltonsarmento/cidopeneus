@@ -49,7 +49,7 @@
             </div>  
             <label>Modelo:</label>
             <select class="form_select" id="codigoModelo">
-              <option value="">Selecione</option>
+              <option value="">Selecione o modelo</option>
             </select>
             <label>Largura:</label>
             <input type="number" name="ContactName" id="largura" value="" class="form_input required" />
@@ -87,7 +87,6 @@
         var aro = $('#aro').val();
         var valor = $('#valor').val();
 
-        
         if(codigoModelo == "" || largura == "" || perfil == "" || aro == "" || valor == ""){
             $('#divMsg').html('<h2 style="color: red" class="page_subtitle">*Verifique os campos!</h2>');
           e.stop();
