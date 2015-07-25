@@ -87,6 +87,7 @@
              data: {nome: nomeModelo}
            })
            .done(function(result) {
+              alert(result);
               if(result == "1"){
                   $('#divMsg').html('<h2 style="color: green" class="page_subtitle">Modelo cadastrado com sucesso!</h2>');
               }else{
