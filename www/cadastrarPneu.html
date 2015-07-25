@@ -98,7 +98,7 @@
           $.ajax({
              method: "POST",
              url: "http://cidopneus.esy.es/json/novoPneu/1",
-             data: {codigoModelo: codigoModelo, largura:largura, perfil:perfil, aro:aro, valor:valor,ativo:1}
+             data: {codigoModelo: codigoModelo, largura:largura, perfil:perfil, aro:aro, valor:valor,ativo:1,editar:1}
              })
              .done(function(result) {
                 if(result == "1"){
