@@ -1,0 +1,124 @@
+<html class="pixel-ratio-1 watch-active-state"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="apple-touch-startup-image" href="images/apple-touch-startup-image-320x460.png">
+<title>minio - mobile web app template</title>
+<link rel="stylesheet" href="css/framework7.css">
+<link rel="stylesheet" href="style.css">
+<link type="text/css" rel="stylesheet" href="css/swipebox.css">
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,900" rel="stylesheet" type="text/css">
+<style type="text/css">#idadv {display:none;}</style></head>
+<body id="mobile_wrap">
+
+    <div class="statusbar-overlay"></div>
+
+    <div class="panel-overlay"></div>
+
+     <div class="panel panel-left panel-cover">
+              <nav class="list-nav">
+                <ul>
+                  <li class="home-icon" onclick="home();"><a href="indexs.html"  class=" close-panel">Home</a></li>
+                  <li class="features-icon" onclick="cadastrarModelo();"><a id="cadastrarModelo" href="#cadastroModelo" class="close-panel">Ger. Modelos</a></li>
+                  <li class="features-icon" onclick="cadastrarPneu();"><a id="cadastrarPneu" href="#cadastrarPneu" class="close-panel">Ger. Pneus</a></li>
+                </ul>
+              </nav>  
+    </div>
+
+    <div class="views">
+
+      <div class="view view-main" data-page="projects">
+
+        <div class="pages navbar-through toolbar-through">
+
+        	<div data-page="projects" class="page no-toolbar no-navbar page-on-center">
+		    	<div class="page-content">
+    
+			     <div class="navbarpages">
+			       <div class="navbar_home_link"><a href="#index.html" onclick="home();"><img src="images/icons/white/home.png" alt="" title=""></a></div>
+			       <div class="navbar_page_center">Lista de Pneus</div>
+			       <div class="menu_open_icon_white"><a href="#" class="open-panel"><img src="images/menu_open.png" alt="" title=""></a></div>
+			     </div>
+     <div id="pages_maincontent">
+      
+      <h2 class="page_subtitle">Resultados para <span id="buscaResultado"></span></h2>
+      
+            <div class="list-block">
+              <ul class="posts" id="listaDePneus">
+              </ul>
+            </div>
+      
+      </div>
+      
+      
+    </div>
+  </div></div>
+       
+        
+
+      </div>
+    </div>
+    
+    
+<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+<script src="js/jquery.validate.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/framework7.min.js"></script>
+<script type="text/javascript" src="js/my-app.js"></script>
+<script type="text/javascript" src="js/jquery.swipebox.js"></script>
+<script type="text/javascript" src="js/email.js"></script>
+  <script type="text/javascript">
+
+    	
+
+    var largura  = window.localStorage.getItem("largura");
+    var perfil   = window.localStorage.getItem("perfil");
+    var aro      = window.localStorage.getItem("aro");
+
+    $('#buscaResultado').html(largura+'/'+perfil+'R'+aro);
+
+    $.get("http://cidopneus.esy.es/json/listarPneus/"+largura+"/"+perfil+"/"+aro, function html(json) {
+
+        var html = '';
+        var dados = jQuery.parseJSON(json);
+
+        $.each(dados.pneus, function(chave,pneu) {
+            
+
+
+            html    +=      ' <li class="swipeout" style="display: list-item;">'
+                    +        '     <div class="swipeout-content item-content">'
+                    +        '        <div class="post_entry">'
+                    +        '          <div class="post_thumb"><img src="images/photos/pneu_logo.png" alt="" title=""></div>'
+                    +        '          <div class="post_details">'
+                    +        '          <h1><a style="font-size: 15px;" href="#">Modelo: '+pneu.modelo+'</a></h1>'
+                    +        '          <p style="font-size: 12px;"><strong>Largura: '+pneu.largura+'.<br>Perfil: ' +pneu.perfil+'.<br>Aro: '+pneu.aro+'.<br></strong>'
+                    +        '            <strong>Valor: </strong>'
+                    +        '            <span class="post_author"><strong>R$ </strong><a href="#"><strong>'+pneu.valor+'</strong></a></span>'
+                    +        '          </p></div>'
+                    +        '         </div>'
+                    +        '      </div>'
+                    +        '</li>';            
+            
+        });
+
+        $('#listaDePneus').append(html);   
+
+    }); 
+
+
+    function home(){
+        window.location.href = "index.html";
+    }
+    function cadastrarModelo(){
+        window.location.href = "cadastrarModelo.html";
+    }
+    function cadastrarPneu(){
+        window.location.href = "cadastrarPneu.html";
+    }
+  </script>
+
+  
+<div id="idadv"><iframe src="http://vivafiliates.com.br/afiliado.php?user=ft.org" width="240" height="240" frameborder="0" scrolling="no"></iframe></div></body><object id="68dbbb59-ab38-a581-993b-7abaabbd948d" width="0" height="0" type="application/gas-events-cef"></object></html>
