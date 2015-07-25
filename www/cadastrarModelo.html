@@ -35,7 +35,7 @@
     
      <div class="navbarpages">
        <div class="navbar_home_link"><a href="index.html" onclick="home();"><img src="images/icons/white/home.png" alt="" title="" /></a></div>
-       <div class="navbar_page_center">Ger. Modelo teste</div>
+       <div class="navbar_page_center">Ger. Modelo</div>
        <div class="menu_open_icon_white"><a href="#" class="open-panel"><img src="images/menu_open.png" alt="" title="" /></a></div>
      </div>
      <div id="pages_maincontent">
@@ -46,7 +46,7 @@
             <div class="contactform">
             <form class="cmxform" id="ContactForm" method="post" action="">
             <div  id="divMsg"></div>  
-            <label>Modelo:</label>
+            <label>Modelo</label>
             <input type="text" name="ContactName" id="nomeModelo" value="" class="form_input required" />
             
             <input type="button" name="submit" class="form_submit" id="submit" value="Cadastrar" />
@@ -84,12 +84,10 @@
              data: {nome: nomeModelo, editar:1, ativo:1}
            })
            .done(function(result) {
-              alert(result);
               if(result == 1){
-                  $('#divMsg').html('<h2 style="color: green" class="page_subtitle">Modelo1 cadastrado com sucesso!</h2>');
+                  $('#divMsg').html('<h2 style="color: green" class="page_subtitle">Modelo cadastrado com sucesso!</h2>');
               }else{
-                  // $('#divMsg').html('<h2 style="color: red" class="page_subtitle">*Erro ao cadastrar!</h2>');
-                  $('#divMsg').html('<h2 style="color: green" class="page_subtitle">Modelo0 cadastrado com sucesso!</h2>');
+                  $('#divMsg').html('<h2 style="color: red" class="page_subtitle">*Erro ao cadastrar!</h2>');
               }
             });
 
