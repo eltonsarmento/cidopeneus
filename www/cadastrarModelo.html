@@ -74,10 +74,10 @@
         var nomeModelo = $('#nomeModelo').val();
 
         if(nomeModelo == ""){
-          alert("O campo Modelo está vazio.");
           $('#divMsg').html('<h2 style="color: red" class="page_subtitle">*Verifique os campos!</h2>');
           e.stop();
         }else{
+
           $.ajax({
              method: "POST",
              url: "http://cidopneus.esy.es/json/novoModelo/1",
