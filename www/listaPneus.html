@@ -78,13 +78,15 @@
     var aro      = window.localStorage.getItem("aro");
 
     $('#buscaResultado').html(largura+'/'+perfil+'R'+aro);
-    
+
     $.get("http://cidopneus.esy.es/json/listarPneus/"+largura+"/"+perfil+"/"+aro, function html(json) {
 
         var html = '';
+        
         var dados = jQuery.parseJSON(json);
 
         $.each(dados.pneus, function(chave,pneu) {
+
             
 
 
