@@ -40,7 +40,7 @@
      </div>
      <div id="pages_maincontent">
       
-      <h2 class="page_subtitle">Cadastrar Pneu</h2>
+      <h2 class="page_subtitle">Cadastrar Pneu teste</h2>
 
             <h2 id="Note"></h2>
             <div class="contactform">
@@ -98,6 +98,7 @@
              data: {codigoModelo: codigoModelo, largura:largura, perfil:perfil, aro:aro, valor:valor,ativo:1,editar:1}
              })
              .done(function(result) {
+
                 if(result == 1){
                     $('#divMsg').html('<h2 style="color: green" class="page_subtitle">Pneu cadastrado com sucesso!</h2>');
                 }else{
